@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina de Usuario</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <!-- Google fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="style2.css">
+  <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Poppins:ital,wght@0,400;0,700;1,200&display=swap"
+          rel="stylesheet">
+
+  <!-- JavaScript Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+
+
+  <link rel="icon" type="imagem/png" href="/images/icon-db-removebg-preview.png" />
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar" style="background-color: #212529;">
+  <div class="container" style="background-color: #212529">
+
+    <a class="navbar-brand" href="frontend2.html" style="width: 25%;">
+      <img class="w-25" src="images/newlogo.png" />
+      <span>DietBoost</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items"
+            aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-items" style="margin-left: 100px">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="justify-content: center!important;">
+        <li class="nav-item">
+          <a class="nav-link" href="usuario2.html">área do usuário</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dicas2.html">dicas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="noticias2.html">noticias</a>
+        </li>
+        <li class="nav-item">
+          <a href="educacional.html" class="nav-link">educacional</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="contatos/lista.html" class="nav-link">contatos</a>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+
+<div class="containe">
+  <div class="leftbox">
+    <nav>
+      <a onclick="tabs(0)" class="tab active">
+        <i class="fa fa-user"></i>
+      </a>
+      <a onclick="tabs(1)" class="tab">
+        <i class="fa fa-credit-card"></i>
+      </a>
+      <a onclick="tabs(2)" class="tab">
+        <i class="fa fa-tv"></i>
+      </a>
+      <a onclick="tabs(3)" class="tab">
+        <i class="fa fa-tasks"></i>
+      </a>
+      <a onclick="tabs(4)" class="tab">
+        <i class="fa fa-cog"></i>
+      </a>
+    </nav>
+  </div>
+  <div class="rightbox">
+    <div class="profile tabShow">
+      <h1>Personal Info</h1>
+      <h2>Nome Completo</h2>
+      <input type="text" class="input" id="name" value="" disabled>
+      <h2>Login</h2>
+      <input type="text" class="input" id="login" value="" disabled>
+      <h2>Email</h2>
+      <input type="text" class="input" id="email" value="" disabled>
+      <h2>Senha</h2>
+      <input type="password" class="input" id="password" value="" disabled>
+      <button class="btn">Update</button>
+    </div>
+    <div class="payment tabShow">
+      <h1>Payment Info</h1>
+      <h2>Payment Method</h2>
+      <input type="text" class="input" value="MasterCard - 0202 **** **** 7336">
+      <h2>Billing Address</h2>
+      <input type="text" class="input" value="1234 Belo Horizonte">
+      <h2>ZipCode</h2>
+      <input type="text" class="input" value="419911">
+      <h2>Billing Date</h2>
+      <input type="text" class="input" value="Jan 20, 2017">
+      <h2>Redeem Card</h2>
+      <input type="password" class="input" value="Enter Gift Code">
+      <button class="btn">Update</button>
+    </div>
+    <div class="subscription tabShow">
+      <h1>Subscription Info</h1>
+      <h2>Payment Date</h2>
+      <p></p>
+      <h2>Next Charges</h2>
+      <p>$80.56 <span>includes tax</span></p>
+      <h2>Plan</h2>
+      <p></p>
+      <h2>Monthly</h2>
+      <p>$107.99/month</p>
+
+      <button class="btn">Update</button>
+    </div>
+    <div class="privacy tabShow">
+      <h1>Privacy Settings</h1>
+      <h2>Manage Email Noti.</h2>
+      <p></p>
+      <h2>Manage Privacy Settings</h2>
+      <p></p>
+      <h2>View Terms Of Use</h2>
+      <p></p>
+      <h2>Personalized Ad Experience</h2>
+      <p></p>
+      <h2>Protect Account</h2>
+      <p></p>
+
+      <button class="btn">Update</button>
+    </div>
+    <div class="settings tabShow">
+      <h1>Account Settings</h1>
+      <h2>Sync WatchList</h2>
+      <p></p>
+      <h2>Hold Subscription</h2>
+      <p></p>
+      <h2>Cancel Subscription</h2>
+      <p></p>
+      <h2>Your Devices</h2>
+      <p></p>
+      <h2>Referrals</h2>
+      <p></p>
+
+      <button class="btn">Update</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script src="profile.js" defer></script>
+
+<script>
+        const tabBtn = document.querySelectorAll(".tab");
+        const tab = document.querySelectorAll(".tabShow");
+
+        function tabs(panelIndex) {
+            tab.forEach(function(node) {
+                node.style.display = "none";
+            });
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
+<script>
+        $(".tab").click(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+    </script>
+</body></html>

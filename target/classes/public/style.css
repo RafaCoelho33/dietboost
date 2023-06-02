@@ -1,0 +1,115 @@
+.teste {
+    width: 75%;
+    justify-content: center!important;
+}
+
+.card_area {
+    background: #2F3335;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+ *{
+    box-sizing: border-box;
+   font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #181A1B!important;
+    color: white;
+    margin: 0;
+}
+
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(66, 66, 66);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.movie{
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color: rgb(48, 48, 48);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie img{
+    width: 100%;
+}
+
+.movie-info{
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info span{
+    background-color: rgb(15, 15, 15);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #181A1B;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+.sctCard {
+    background-color: #181A1B;
+}
+
+.table {
+    color:white!important;
+}
+.carousel {
+  color: red!important;
+}
+
+
+#footer
+{
+  position: static;
+  bottom: 0;
+  flex-shrink: 0;
+  
+
+}
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,16 @@
+.acoes {
+    display: flex !important;
+    justify-content: space-between!important;
+    padding-right: 30%!important;
+}
+ body {
+    background-color: #181A1B!important;
+    color: white!important;
+    margin: 0;
+}
+.table {
+    color:white!important;
+}
+* {
+     font-family: 'Inter', sans-serif;
+}

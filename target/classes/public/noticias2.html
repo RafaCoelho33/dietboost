@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> DB - Notícias </title>
+
+  <!-- Google fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+  <!-- CSS do projeto -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="icon" type="imagem/png" href="/images/icon-db-removebg-preview.png" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar" style="background-color: #212529;">
+    <div class="container" style="background-color: #212529">
+
+      <a class="navbar-brand" href="frontend2.html" style="width: 25%;">
+        <img class="w-25" src="images/newlogo.png" />
+        <span>DietBoost</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items"
+        aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-items" style="margin-left: 100px">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="justify-content: center!important;">
+          <li class="nav-item">
+            <a class="nav-link" href="usuario2.html">área do usuário</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dicas2.html">dicas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="noticias2.html">noticias</a>
+          </li>
+          <li class="nav-item">
+            <a href="educacional2.html" class="nav-link">educacional</a>
+          </li>
+         <!-- <li class="nav-item">
+            <a href="contatos/lista.html" class="nav-link">contatos</a>
+          </li> -->
+        </ul>
+        <div><a class="btn btn-light" href="user.html">Perfil</a></div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <main>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/supplements.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Suplementação: Entenda esse tabu da sociedade</h5>
+            <p><a class="btn btn-dark btn-md" href="noticia1_2.html">Ler mais...</a></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/Nutricao-esportiva-1024x682.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Nutrição Esportiva: Entenda mais sobre essa área que tem crescido no país</h5>
+            <p><a class="btn btn-dark btn-md" href="noticia2_2.html">Ler mais...</a></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/lowcarb.jpg" class="d-block" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Low Carb: Entenda como essa dieta funciona e porque ficou tão famosa</h5>
+            <p><a class="btn btn-dark btn-md" href="noticia3_2.html">Ler mais...</a></p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="container-fluid" style="background-color: #313537;" id="footer" style="align-self: center;">
+      <div class="container">
+        <div class="row">
+          <!-- FOOTER DETAILS -->
+          <div class="text-center p-3" id="footer-details" style="width: 100%">
+            <div class="row">
+              <div class="col-12 " id="news-container">
+                <h6>Copyright 2023, <b>DietBoost</b> - Todos os direitos reservados </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  </footer>
+  </main>
+
+  <!-- FOOTER -->
+  <!-- <footer class="container-fluid" style="background-color: #313537;" id="footer" style="align-self: center;">
+    <div class="container">
+      <div class="row">
+        FOOTER DETAILS 
+        <div class="text-center p-3" id="footer-details" style="width: 100%">
+          <div class="row">
+            <div class="col-12">
+              <h6>Copyright 2022, <b>DietBoost</b> - Todos os direitos reservados </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+</body>
+
+</html>

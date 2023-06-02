@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> DB - Calculadora </title>
+
+  <!-- Google fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+  <!-- JavaScript Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="calc.css">
+  <link rel="icon" type="imagem/png" href="/images/icon-db-removebg-preview.png" />
+
+</head>
+
+<body onload="init()">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar" style="background-color: #212529;">
+    <div class="container" style="background-color: #212529">
+  
+      <a class="navbar-brand" href="frontend.html" style="width: 25%;">
+        <img class="w-25" src="images/newlogo.png" />
+        <span>DietBoost</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items"
+              aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-items" style="margin-left: 100px">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="justify-content: center!important;">
+          <li class="nav-item">
+            <a class="nav-link" href="usuario.html">área do usuário</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dicas.html">dicas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="noticias.html">noticias</a>
+          </li>
+          <li class="nav-item">
+            <a href="educacional.html" class="nav-link">educacional</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="contatos/lista.html" class="nav-link">contatos</a>
+          </li> -->
+        </ul>
+        <!--<div><a class="btn btn-light" href="usuario/list/1">Cadastre-se</a></div>-->
+        <div><a class="btn btn-dark" href="login.html">Login</a></div>
+      </div>
+    </div>
+  </nav>
+  <h1 style="margin-top: 20px; margin-bottom: 25px;">Calculadora de Macronutrientes</h1>
+
+
+  <div class="container">
+
+
+    <form id="form-alimento">
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label for="inputNome" id="labelNome">Nome</label>
+          <input type="text" id="inputNome" class="form-control" placeholder="Selecione um alimento para alterar seus valores e/ou adicionar a contagem geral!">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputCalorias" id="labelCalorias">Calorias</label>
+          <input type="text" id="inputCalorias" class="form-control" placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label for="inputGramas" id="labelGramas">Gramas</label>
+          <input type="text" id="inputGramas" value="100" class="form-control">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputCarboidratos" id="labelCarboidratos"> Carboidratos </label>
+          <input type="text" id="inputCarboidratos" class="form-control"
+            placeholder="">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <label for="inputProteinas" id="labelProteinas"> Proteinas </label>
+          <input type="text" id="inputProteinas" class="form-control" placeholder="">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputGorduras" id="labelGorduras"> Gorduras </label>
+          <input type="text" id="inputGorduras" class="form-control" placeholder="">
+        </div>
+      </div>
+
+
+
+
+      <div id="infoAlimentos">
+
+
+
+
+
+
+        <br>
+
+
+
+        <br>
+        <div class="form-group row">
+          <div class="col-sm-12" style="justify-content: center;">
+            <a class="btn btn-success" id="btnAddAlimento"> Adicionar Alimento</a>
+            <a class="btn btn-danger" id="btnRemoveAlimento"> Remover Alimento</a>
+            <a class="btn btn-warning" id="btnReiniciar"> Reiniciar </a>
+            <a class="btn btn-info" href="cadalim.html"> Cadastrar seu alimento </a>
+          </div>
+        </div>
+
+        <div class="container">
+
+
+
+
+          <div class="row">
+            <div class="col-sm-12">
+              <table id="grid-alimentos" class="teste table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">KCalorias</th>
+                    <th scope="col">Carboidratos</th>
+                    <th scope="col">Proteinas</th>
+                    <th scope="col">Gorduras</th>
+                  </tr>
+                </thead>
+                <tbody id="table-alimentos">
+                  <tr>
+                    <td scope="row">1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="somaAlimentos">
+        <div class="form-group row" style="display: flex; justify-content: center;">
+          <div class="col-sm-12">
+            <label for="inputTotCalorias" id="labelTotCalorias"> </label>
+            <input type="number" id="inputTotCalorias" class="inputTot">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-4">
+            <label for="inputTotCarboidratos" id="labelTotCarboidratos">Carboidratos Totais</label>
+            <input type="number" id="inputTotCarboidratos" class="inputTot">
+          </div>
+          <div class="col-sm-4">
+            <label for="inputTotProteinas" id="labelTotProteinas"> Proteinas Totais </label>
+            <input type="number" id="inputTotProteinas" class="inputTot">
+          </div>
+          <div class="col-sm-4">
+            <label for="inputTotGorduras" id="labelTotGorduras"> Gorduras Totais </label>
+            <input type="number" id="inputTotGorduras" class="inputTot">
+          </div>
+        </div>
+      </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="calc.js"></script>
+  <script>
+    function exibeAlimentos() {
+      // Remove todas as linhas do corpo da tabela
+      $("#table-alimentos").html("");
+
+      // Popula a tabela com os registros do banco de dados
+      for (i = 0; i < db.data.length; i++) {
+        let alimento = db.data[i];
+        $("#table-alimentos").append(`<tr><td scope="row">${alimento.id}</td>
+                                                <td>${alimento.nome}</td>
+                                                <td>${alimento.calorias}</td>
+                                                <td>${alimento.carboidratos}</td>
+                                                <td>${alimento.proteinas}</td>
+                                                <td>${alimento.gorduras}</td>
+                                            </tr>`);
+      }
+    }
+
+    function init() {
+      // Adiciona funções para tratar os eventos 
+      $("#btnInsert").click(function () {
+        // Verfica se o formulário está preenchido corretamente
+        if (!$('#form-alimento')[0].checkValidity()) {
+          displayMessage("Preencha o formulário corretamente.");
+          return;
+        }
+
+        // Obtem os valores dos campos do formulário
+        let campoNome = $("#inputNome").val();
+        let campoCalorias = $("#inputCalorias").val();
+        let campoCarboidrato = $('#inputCarboidratos').val();
+        let campoProteina = $("#inputProteinas").val();
+        let campoGordura = $('#inputGorduras').val();
+        let alimento = {
+          nome: campoNome,
+          calorias: campoCalorias,
+          carboidratos: campoCarboidrato,
+          proteinas: campoProteina,
+          gorduras: campoGordura
+        };
+
+        insertAlimento(alimento);
+
+        // Reexibe os alimentos
+        exibeAlimentos();
+
+        // Limpa o formulario
+        $("#form-alimento")[0].reset();
+      });
+
+
+      // Preenche o formulário quando o usuario clicar em uma linha da tabela 
+      $("#grid-alimentos").on("click", "tr", function (e) {
+        let linhaAlimento = this;
+        colunas = linhaAlimento.querySelectorAll("td");
+
+        $("#inputId").val(colunas[0].innerText);
+        $("#inputNome").val(colunas[1].innerText);
+        $("#inputCalorias").val(colunas[2].innerText);
+        $("#inputCarboidratos").val(colunas[3].innerText);
+        $("#inputProteinas").val(colunas[4].innerText);
+        $("#inputGorduras").val(colunas[5].innerText);
+      });
+
+      exibeAlimentos();
+
+      let totCalorias = 0.0;
+      let totCarboidratos = 0.0;
+      let totProteinas = 0.0;
+      let totGorduras = 0.0;
+
+
+
+
+      $("#btnAddAlimento").click(function () {
+
+        let gramas = parseInt(document.querySelector("#inputGramas").value);
+
+        if (gramas != 100) {
+          totCalorias += (gramas * parseFloat(document.querySelector("#inputCalorias").value)) / 100;
+
+          totCarboidratos += (gramas * parseFloat(document.querySelector("#inputCarboidratos").value)) / 100;
+
+          totProteinas += (gramas * parseFloat(document.querySelector("#inputProteinas").value)) / 100;
+
+          totGorduras += (gramas * parseFloat(document.querySelector("#inputGorduras").value)) / 100;
+        }
+
+        else {
+          totCalorias += parseFloat(document.querySelector("#inputCalorias").value);
+          totCarboidratos += parseFloat(document.querySelector("#inputCarboidratos").value);
+          totProteinas += parseFloat(document.querySelector("#inputProteinas").value);
+          totGorduras += parseFloat(document.querySelector("#inputGorduras").value);
+
+        }
+
+
+
+
+
+        document.querySelector("#inputTotCalorias").value = totCalorias.toFixed(2);
+        document.querySelector("#inputTotCarboidratos").value = totCarboidratos.toFixed(2);
+        document.querySelector("#inputTotProteinas").value = totProteinas.toFixed(2);
+        document.querySelector("#inputTotGorduras").value = totGorduras.toFixed(2);
+
+
+
+
+
+      });
+
+
+
+
+
+
+      $("#btnRemoveAlimento").click(function () {
+        let gramas = parseInt(document.querySelector("#inputGramas").value);
+
+
+
+        if (gramas != 100) {
+          totCalorias -= (gramas * parseFloat(document.querySelector("#inputCalorias").value)) / 100;
+
+          totCarboidratos -= (gramas * parseFloat(document.querySelector("#inputCarboidratos").value)) / 100;
+
+          totProteinas -= (gramas * parseFloat(document.querySelector("#inputProteinas").value)) / 100;
+
+          totGorduras -= (gramas * parseFloat(document.querySelector("#inputGorduras").value)) / 100;
+        }
+
+        else {
+          totCalorias -= parseFloat(document.querySelector("#inputCalorias").value);
+          totCarboidratos -= parseFloat(document.querySelector("#inputCarboidratos").value);
+          totProteinas -= parseFloat(document.querySelector("#inputProteinas").value);
+          totGorduras -= parseFloat(document.querySelector("#inputGorduras").value);
+
+        }
+
+        if (totCalorias < 0)
+
+          totCalorias = 0;
+
+        if (totCarboidratos < 0)
+
+          totCarboidratos = 0;
+
+        if (totGorduras < 0)
+          totGorduras = 0;
+
+        if (totProteinas < 0)
+          totProteinas = 0;
+
+
+        document.querySelector("#inputTotCalorias").value = totCalorias.toFixed(2);
+        document.querySelector("#inputTotCarboidratos").value = totCarboidratos.toFixed(2);
+        document.querySelector("#inputTotProteinas").value = totProteinas.toFixed(2);
+        document.querySelector("#inputTotGorduras").value = totGorduras.toFixed(2);
+
+      });
+
+      $("#btnReiniciar").click(function () {
+
+
+        document.querySelector("#inputTotCalorias").value = 0.0;
+        document.querySelector("#inputTotCarboidratos").value = 0.0;
+        document.querySelector("#inputTotProteinas").value = 0.0;
+        document.querySelector("#inputTotGorduras").value = 0.0;
+        document.querySelector("#inputGramas").value = 100;
+
+        totCalorias = 0.0;
+        totCarboidratos = 0.0;
+        totProteinas = 0.0;
+        totGorduras = 0.0;
+
+      });
+
+
+    }
+
+
+
+
+  </script>
+  
+</body>
+
+</html>

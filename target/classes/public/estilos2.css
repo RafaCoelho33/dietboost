@@ -1,0 +1,22 @@
+ *{
+    box-sizing: border-box;
+   font-family: 'Inter', sans-serif;
+
+}
+
+body {
+    background-color: #181A1B!important;
+    color: white;
+    
+}
+
+html, body {
+  height: 100%;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+}
